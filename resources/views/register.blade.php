@@ -39,6 +39,13 @@
 
                 <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
             </form>
+
+            <div class="mt-3 text-center">
+                <p class="text-muted mb-0">
+                    Vous avez déjà un compte ?
+                    <a href="{{ route('userlogin') }}" class="text-primary fw-semibold">Connectez-vous ici</a>
+                </p>
+            </div>
         </div>
     </div>
 @endsection

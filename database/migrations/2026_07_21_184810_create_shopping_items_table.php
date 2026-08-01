@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('unit');
             $table->string('category')->nullable();
             $table->text('notes')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

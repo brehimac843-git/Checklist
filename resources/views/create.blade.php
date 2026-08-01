@@ -10,7 +10,7 @@
                 <a href="{{ route('shopping.index') }}" class="btn btn-outline-secondary">Retour</a>
             </div>
 
-            <form action="{{ route('shopping.store') }}" method="POST">
+            <form action="{{ route('shopping.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @include('_form', ['item' => $item])
             </form>
