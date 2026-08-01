@@ -1,9 +1,9 @@
 FROM php:8.2-cli
 
-# Install required system packages and PHP extensions
+# Install required system packages and PHP extensions (added libpq-dev and pdo_pgsql)
 RUN apt-get update && apt-get install -y \
-    git unzip zip libpng-dev libonig-dev libxml2-dev \
-    && docker-php-ext-install pdo_mysql mbstring
+    git unzip zip libpng-dev libonig-dev libxml2-dev libpq-dev \
+    && docker-php-ext-install pdo_mysql pdo_pgsql mbstring
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
