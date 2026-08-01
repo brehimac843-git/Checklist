@@ -9,3 +9,9 @@ services:
         value: production
       - key: APP_DEBUG
         value: "false"
+      - key: APP_ADMIN_NAME
+        value: Admin
+      - key: APP_ADMIN_EMAIL
+        value: admin@.com
+      - key: APP_ADMIN_PASSWORD
+        value: admin123!

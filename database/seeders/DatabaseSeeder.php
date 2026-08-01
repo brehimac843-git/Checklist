@@ -18,17 +18,27 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
         User::firstOrCreate(
-            ['email' => 'admin@comme-tu-veux.com'],
+            ['email' => 'test@example.com'],
             [
-                'name' => 'Admin',
-                'password' => Hash::make('Admin123!'),
+                'name' => 'Test User',
+                'password' => Hash::make('password'),
+                'role' => 'user',
+                'is_active' => true,
+            ]
+        );
+
+        $adminEmail = env('APP_ADMIN_EMAIL', 'admin@comme-tu-veux.com');
+        $adminName = env('APP_ADMIN_NAME', 'Admin');
+        $adminPassword = env('APP_ADMIN_PASSWORD', 'Admin123!');
+
+        User::updateOrCreate(
+            ['email' => $adminEmail],
+            [
+                'name' => $adminName,
+                'password' => Hash::make($adminPassword),
                 'role' => 'admin',
+                'is_active' => true,
             ]
         );
     }
